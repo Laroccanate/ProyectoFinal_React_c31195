@@ -1,9 +1,13 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 const ItemCount = ({ stock, initial, onAdd }) => {
 
-const [contador, setContador] = useState(0)
+const [contador, setContador] = useState(initial)
+
+useEffect(()=>{
+    console.log("Pidiendo Usuarios...")
+},[])
 
 const aumentarContador = () => {
     setContador(contador+1)
