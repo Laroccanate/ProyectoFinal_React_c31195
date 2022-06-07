@@ -1,0 +1,17 @@
+body{
+    background-color: beige
+}
+
+
+html , body , #root {
+    height: 10vh;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+}
+header{
+    background-color: rgb(199, 209, 187);
+} 
+h1{}
