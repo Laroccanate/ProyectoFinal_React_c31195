@@ -8,12 +8,14 @@ import ItemLIstContainer from "./components/ItemLIstContainer"
 import ItemCount from "./components/ItemCount"
 import {container} from "react-bootstrap"
 
+
+
 const App = () => {
     return (
         <>
         <Header/>   
-        <ItemLIstContainer greeting= "Bienvenido"/>
         <Main/>
+        <ItemLIstContainer greeting= "Bienvenido"/>
         <Footer/>
         </>
     )
