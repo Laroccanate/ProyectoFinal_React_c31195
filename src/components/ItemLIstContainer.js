@@ -6,20 +6,28 @@ import productos from '../utils/productos'
 import ItemList from './ItemList'
 import style from './ItemListContainer.module.css'
 
+
 function ItemListContainer() {
     const [items, setItems] = useState([])
 
     useEffect(()=>{
         customFetch(2000, productos)
         .then(resultado => setItems(resultado))
+        .catch((error) => console.log(error))
     }, [items])
     
   return (
     <div className={style.container}>
         <ItemList products={items}/>
+        
     </div>
   )
 }
+
+
+
+
+
 
 export default ItemListContainer
 

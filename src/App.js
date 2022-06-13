@@ -7,6 +7,7 @@ import CartWidget from "./components/CartWidget"
 import ItemLIstContainer from "./components/ItemLIstContainer"
 import ItemCount from "./components/ItemCount"
 import {container} from "react-bootstrap"
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 
@@ -16,6 +17,7 @@ const App = () => {
         <Header/>   
         <Main/>
         <ItemLIstContainer greeting= "Bienvenido"/>
+        <ItemDetailContainer/>
         <Footer/>
         </>
     )

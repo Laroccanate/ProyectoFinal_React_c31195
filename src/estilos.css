@@ -15,3 +15,10 @@ header{
     background-color: rgb(199, 209, 187);
 } 
 h1{}
+
+.detail{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 2px solid gray;
+}
