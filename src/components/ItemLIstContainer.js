@@ -4,11 +4,23 @@ import { useState } from 'react'
 import customFetch from '../utils/customFetch'
 import productos from '../utils/productos'
 import ItemList from './ItemList'
-import style from './ItemListContainer.module.css'
+import {useParams} from "react-router-dom"
 
 
 function ItemListContainer() {
     const [items, setItems] = useState([])
+    const resultado = useParams()
+    console.log(resultado.id)
+
+     /* if(resultado.id == undefined){
+useEffect(()=>{
+        customFetch(1000, productos)
+        .then(resultado => setItems(resultado))
+        .catch((error) => console.log(error))
+    }, [items])
+  }else{
+    //pido por categoria
+  } */
 
     useEffect(()=>{
         customFetch(2000, productos)
@@ -17,9 +29,8 @@ function ItemListContainer() {
     }, [items])
     
   return (
-    <div className={style.container}>
-        <ItemList products={items}/>
-        
+    <div className="style.container">
+        <ItemList products={items}/>        
     </div>
   )
 }

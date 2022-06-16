@@ -1,25 +1,28 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from "./Header"
 import Main from "./Main"
-import Footer from "./Footer"
 import NavBar from "./components/NavBar"
-import CartWidget from "./components/CartWidget"
+import Footer from "./Footer"
 import ItemLIstContainer from "./components/ItemLIstContainer"
-import ItemCount from "./components/ItemCount"
-import {container} from "react-bootstrap"
 import ItemDetailContainer from './components/ItemDetailContainer';
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route}  from 'react-router-dom';
 
 
 
 const App = () => {
-    return (
-        <>
-        <Header/>   
+    return (        
+        <BrowserRouter>
+        <Header/> 
+        <NavBar/>          
         <Main/>
-        <ItemLIstContainer greeting= "Bienvenido"/>
-        <ItemDetailContainer/>
+        <Routes>
+            <Route path={"/"} element={<ItemLIstContainer/>}/>
+            <Route path={"/category/:id"} element={<ItemLIstContainer/>}/>
+            <Route path={"/detail/:id"} element={<ItemDetailContainer/>}/>
+        </Routes>                  
         <Footer/>
-        </>
+        </BrowserRouter>
     )
 }
 
