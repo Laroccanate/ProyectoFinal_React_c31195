@@ -1,7 +1,7 @@
 import React from 'react'
-import { useEffect } from 'react'
+import { useEffect, setProduct } from 'react'
 import { useState } from 'react'
-import customFetch from '../utils/customFetch'
+import {customFetch, getProductosByCategory} from '../utils/customFetch'
 import productos from '../utils/productos'
 import ItemList from './ItemList'
 import {useParams} from "react-router-dom"
@@ -9,36 +9,28 @@ import {useParams} from "react-router-dom"
 
 function ItemListContainer() {
     const [items, setItems] = useState([])
-    const resultado = useParams()
-    console.log(resultado.id)
 
-     /* if(resultado.id == undefined){
-useEffect(()=>{
-        customFetch(1000, productos)
-        .then(resultado => setItems(resultado))
-        .catch((error) => console.log(error))
-    }, [items])
-  }else{
-    //pido por categoria
-  } */
+    const {categoryId} = useParams()
 
-    useEffect(()=>{
-        customFetch(2000, productos)
-        .then(resultado => setItems(resultado))
-        .catch((error) => console.log(error))
-    }, [items])
-    
-  return (
-    <div className="style.container">
+    useEffect(() => {
+        if(!categoryId) {
+        customFetch()
+        .then(response => {
+            setItems(response)
+            })
+        } else {
+            getProductosByCategory(categoryId)
+            .then(response => {
+            setItems(response)
+            })
+        }
+    }, [categoryId])
+    return (
+    <div>
         <ItemList products={items}/>        
     </div>
-  )
+)
 }
-
-
-
-
-
 
 export default ItemListContainer
 

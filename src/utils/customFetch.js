@@ -1,6 +1,6 @@
 import productos from "./productos"
 
-const customFetch =()=>{
+export const customFetch =()=>{
     return new Promise((resolve) =>{
         setTimeout(()=>{
             resolve(productos)
@@ -8,7 +8,7 @@ const customFetch =()=>{
     })
 }
 
-const getProductosById = (id)=>{
+export const getProductosById = (id)=>{
     return new Promise((resolve) =>{
         setTimeout(()=>{
             resolve(productos.find(prod => prod.id === id))
@@ -16,6 +16,11 @@ const getProductosById = (id)=>{
     })
 }
 
+export const getProductosByCategory = (category)=>{
+    return new Promise((resolve) =>{
+        setTimeout(()=>{
+            resolve(productos.filter(prod => prod.category === category))
+        },500)
+    })
+}
 
-
-export default customFetch
