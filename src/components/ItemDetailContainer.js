@@ -1,4 +1,4 @@
-import React, {useState, useEffect, setProduct} from 'react'
+import React, {useState, useEffect} from 'react'
 import ItemDetail from './ItemDetail';
 import {getProductosById} from '../utils/customFetch'
 import { useParams } from 'react-router-dom';
