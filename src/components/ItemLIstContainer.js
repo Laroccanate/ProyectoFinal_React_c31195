@@ -9,21 +9,21 @@ import {useParams} from "react-router-dom"
 function ItemListContainer() {
     const [items, setItems] = useState([])
 
-    const {categoryId} = useParams()
+    const {id} = useParams()
 
     useEffect(() => {
-        if(!categoryId) {
+        if(!id) {
         customFetch()
         .then(response => {
             setItems(response)
             })
         } else {
-            getProductosByCategory(categoryId)
+            getProductosByCategory(id)
             .then(response => {
             setItems(response)
             })
         }
-    }, [categoryId])
+    }, [id])
     return (
     <div>
         <ItemList products={items}/>        

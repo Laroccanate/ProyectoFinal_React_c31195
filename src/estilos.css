@@ -65,3 +65,10 @@ a.active {
     margin-bottom: 1rem;
 }
 
+.item--detail{    
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border: 2px solid gray;
+        
+    }

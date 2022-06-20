@@ -8,7 +8,7 @@ function Item({id, title, description, price, image, stock}) {
         <h2>{title}</h2>   
         <img src={image} alt={id}/>
         <h6>${price}.-</h6>
-        <Link to={`/detail/${id}`}>Detalle del producto</Link>
+        <Link to={`/item/${id}`}>Detalle del producto</Link>
         <ItemCount stock={stock}/>
     </div>
   )
