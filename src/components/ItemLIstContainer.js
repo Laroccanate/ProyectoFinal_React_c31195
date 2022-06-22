@@ -4,29 +4,35 @@ import { useState } from 'react'
 import {customFetch, getProductosByCategory} from '../utils/customFetch'
 import ItemList from './ItemList'
 import {useParams} from "react-router-dom"
+import { ProductLoader } from './ProductLoader'
 
 
 function ItemListContainer() {
-    const [items, setItems] = useState([])
 
+    const [items, setItems] = useState([])
+    const [loading, setLoading] = useState(true)
     const {id} = useParams()
 
-    useEffect(() => {
+    useEffect(() => {    
+        setLoading(true)    
         if(!id) {
         customFetch()
         .then(response => {
             setItems(response)
+            setLoading(false)
             })
         } else {
             getProductosByCategory(id)
             .then(response => {
             setItems(response)
+            setLoading(false)
             })
         }
+        
     }, [id])
     return (
     <div>
-        <ItemList products={items}/>        
+    {loading ? <ProductLoader/> : <ItemList products={items}/>}
     </div>
 )
 }

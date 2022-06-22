@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-function ItemCount({stock}) {
+function ItemCount({stock, onAdd}) {
     
     const [count, setCount] = useState(0)
     function adding(){
@@ -13,8 +13,13 @@ function ItemCount({stock}) {
         if (count > 0)
         setCount (count-1)
     }
-    const confirmarContador = () => {
-        alert ("Se agregó al carrito")
+    const confirmarContador = (e) => {
+        onAdd(count)
+        //return ()=>{
+            
+        //    alert ("Se agregó al carrito")
+        //}
+        
     }
 
   return (

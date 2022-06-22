@@ -8,6 +8,7 @@ const NavBar = () => {
                 <NavLink to="/category/jewelery">{"jewelery"}</NavLink>
                 <NavLink to="/category/electronics">{"electronics"}</NavLink>
                 <NavLink to="/category/clothing">{"clothing"}</NavLink>
+                <NavLink to="/carrito">{"carrito"}</NavLink>                
                 <CartWidget/>
             </nav>           
     ) 
