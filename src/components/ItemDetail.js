@@ -2,6 +2,7 @@ import React from 'react'
 import {useState, useContext} from 'react'
 import ItemCount from './ItemCount'
 import {Link} from 'react-router-dom';
+import { contexto } from './CartContext';
 
 
 
@@ -12,10 +13,11 @@ console.log(carrito)*/
 
   const [confirm, setConfirm] = useState(true)
 
-  const onAdd = (cantidadSeleccionada) =>{
+  const onAdd = (cantidadSeleccionada) =>{    
     if (cantidadSeleccionada >= 1){
       console.log(cantidadSeleccionada);
-      setConfirm(false);
+      agregarProducto(item, cantidadSeleccionada)
+      //setConfirm(false);
     } else {
       return null;
   }
