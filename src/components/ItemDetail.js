@@ -2,14 +2,14 @@ import React from 'react'
 import {useState, useContext} from 'react'
 import ItemCount from './ItemCount'
 import {Link} from 'react-router-dom';
-import { contexto } from './CartContext';
+import {contexto} from './CartContext';
 
 
 
 const ItemDetail = ({item}) => {
 
-  /*const {carrito, agregarProducto} = useInformation()
-console.log(carrito)*/
+  const {carrito, agregarProducto} = useContext(contexto)
+console.log(carrito)
 
   const [confirm, setConfirm] = useState(true)
 

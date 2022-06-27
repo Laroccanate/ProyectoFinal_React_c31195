@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 import { contexto } from "./CartContext"
 
 const CartWidget = () => {
-        const {cartLenght} = useContext(contexto)
+        const {carrito, cartLenght} = useContext(contexto)
         //resultado.agregarProducto()
         return (
                 <>
