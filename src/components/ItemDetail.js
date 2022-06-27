@@ -16,8 +16,8 @@ console.log(carrito)*/
   const onAdd = (cantidadSeleccionada) =>{    
     if (cantidadSeleccionada >= 1){
       console.log(cantidadSeleccionada);
-      agregarProducto(item, cantidadSeleccionada)
-      //setConfirm(false);
+      agregarProducto (item, cantidadSeleccionada)
+      setConfirm(false);
     } else {
       return null;
   }
