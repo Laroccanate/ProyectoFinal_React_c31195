@@ -1,4 +1,4 @@
-
+/*
 function Cart() {
   return (
     <div>
@@ -8,3 +8,4 @@ function Cart() {
 }
 
 export default Cart
+*/

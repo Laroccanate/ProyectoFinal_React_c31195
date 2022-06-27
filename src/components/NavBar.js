@@ -7,8 +7,7 @@ const NavBar = () => {
             <nav className="navbar navbar-light bg-light">                           
                 <NavLink to="/category/jewelery">{"jewelery"}</NavLink>
                 <NavLink to="/category/electronics">{"electronics"}</NavLink>
-                <NavLink to="/category/clothing">{"clothing"}</NavLink>
-                <NavLink to="/carrito">{"carrito"}</NavLink>                
+                <NavLink to="/category/clothing">{"clothing"}</NavLink>                
                 <CartWidget/>
             </nav>           
     ) 

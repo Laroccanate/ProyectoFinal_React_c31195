@@ -1,15 +1,20 @@
 import React from 'react'
-import {useState} from 'react'
+import {useState, useContext} from 'react'
 import ItemCount from './ItemCount'
 import {Link} from 'react-router-dom';
 
 
+
 const ItemDetail = ({item}) => {
+
+  /*const {carrito, agregarProducto} = useInformation()
+console.log(carrito)*/
+
   const [confirm, setConfirm] = useState(true)
 
   const onAdd = (cantidadSeleccionada) =>{
     if (cantidadSeleccionada >= 1){
-      console.log("Product added!");
+      console.log(cantidadSeleccionada);
       setConfirm(false);
     } else {
       return null;
@@ -28,7 +33,7 @@ const ItemDetail = ({item}) => {
         <h4>{item.category}</h4>
         <h4>${item.price}.-</h4>
       </div>       
-      {confirm ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>: <div className="view-cart-container"><Link to={`/cart`} className="view-cart">Go to Cart</Link></div>}      
+      {confirm ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>: <div><Link to={`/carrito`}>Terminar Compra</Link></div>}       
       </div>
       
     )

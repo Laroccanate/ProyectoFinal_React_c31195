@@ -9,12 +9,12 @@ import ItemListContainer from "./components/ItemListContainer"
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route}  from 'react-router-dom';
-
-
+import {MiProvider} from './components/CartContext';
 
 const App = () => {
     return (        
         <BrowserRouter>
+        <MiProvider> 
         <Header/> 
         <NavBar/>          
         <Main/>
@@ -24,7 +24,8 @@ const App = () => {
             <Route path={"/item/:id"} element={<ItemDetailContainer/>}/>
             <Route path={"/carrito"} element={<Carrito/>}/>
             <Route path={"/checkout"} element={<Checkout/>}/>
-        </Routes>                   
+        </Routes>
+        </MiProvider>
         <Footer/>
         </BrowserRouter>
     )

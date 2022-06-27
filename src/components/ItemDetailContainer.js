@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
         .catch((error) => console.log(error))
     }, [])
 
-    console.log(item)
+    //console.log(item)
   return (
     <ItemDetail item={item}/>)
 }
@@ -23,3 +23,4 @@ const ItemDetailContainer = () => {
 
 
 export default ItemDetailContainer
+

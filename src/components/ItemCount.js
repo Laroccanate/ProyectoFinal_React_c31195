@@ -15,11 +15,7 @@ function ItemCount({stock, onAdd}) {
     }
     const confirmarContador = (e) => {
         onAdd(count)
-        //return ()=>{
-            
-        //    alert ("Se agregó al carrito")
-        //}
-        
+    
     }
 
   return (
