@@ -10,7 +10,7 @@ function Cart() {
   return (
     <div>
       {carrito.map((product) =>(
-      <div key={product.producto}>
+      <div key={product.id}>
         <img src={product.image} alt={product.title} width="400"/>
         <h1>{product.title}</h1>
         <h2>Id:{product.id}</h2>
