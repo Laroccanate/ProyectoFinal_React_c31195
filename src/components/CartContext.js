@@ -13,10 +13,19 @@ export const MiProvider = ({ children }) => {
 
     // Agregar un item al carrito
     const agregarProducto = (producto, cantidad) => {
-        const copia = [...carrito]
+        if(isInCart(producto.id)){
+            let copia = carrito.findIndex((copia) => (copia.id === producto.id))
+            let nuevo_producto = [...carrito]
+            nuevo_producto[copia].cantidad += cantidad
+            setCarrito(nuevo_producto)            
+        } else {
+            const itemToAdd = {...producto, cantidad}
+            setCarrito([...carrito, itemToAdd])
+        }
+        /*const copia = [...carrito]
         const nuevo_producto = { ...producto, cantidad: cantidad }
         copia.push(nuevo_producto)
-        setCarrito(copia)
+        setCarrito(copia)*/
     }
 // Verifica si el producto ya fue agrgado al Cart
 const isInCart = (id) => {

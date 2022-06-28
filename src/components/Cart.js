@@ -16,7 +16,7 @@ function Cart() {
         <h2>Id:{product.id}</h2>
         <h3>Stock:{product.stock}</h3> 
         <h4>${product.price}.-</h4>
-        <p className='text14d'>Cantidad total:{product.cantidad}</p>
+        <p>Cantidad total:{product.cantidad}</p>
         </div> 
       )
       
