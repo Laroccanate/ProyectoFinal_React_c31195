@@ -9,7 +9,7 @@ import {contexto} from './CartContext';
 const ItemDetail = ({item}) => {
 
   const {carrito, agregarProducto} = useContext(contexto)
-console.log(carrito)
+
 
   const [confirm, setConfirm] = useState(true)
 
@@ -35,7 +35,7 @@ console.log(carrito)
         <h4>{item.category}</h4>
         <h4>${item.price}.-</h4>
       </div>       
-      {confirm ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>: <div><Link to={`/carrito`}>Terminar Compra</Link></div>}       
+      {confirm ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>: <div><Link to={`/cart`}>Terminar Compra</Link></div>}       
       </div>
       
     )

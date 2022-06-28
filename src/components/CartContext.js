@@ -8,9 +8,7 @@ export const Provider = contexto.Provider
 export const MiProvider = ({ children }) => {
 
     const [carrito, setCarrito] = useState([])
-
     const [cantidad_total, setCantidadTotal] = useState(0)
-
     const [precio_total, setPrecioTotal] = useState(0)
 
     // Agregar un item al carrito
@@ -20,18 +18,37 @@ export const MiProvider = ({ children }) => {
         copia.push(nuevo_producto)
         setCarrito(copia)
     }
+// Verifica si el producto ya fue agrgado al Cart
+const isInCart = (id) => {
+    return carrito.some((item) => (item.id === id))
+}
+
 
 // Remover un item del carrito
     const eliminarProducto = (producto) => {
-        //setCarrito()
+        setCarrito (carrito.filter((item) => (item.producto !== producto)))
     }
 
     const actualizarCantidad = (producto, cantidad) => {
         //setCarrito()
     }
 
-// Limpiar el carrito
-    const vaciarCarrito = () => { }
+
+// Vaciar el carrito
+    const vaciarCarrito = () => { 
+        setCarrito ([])
+    }
+
+
+    // Obtener número total de items
+    const cartLenght = () => {
+        let quantity = 0
+        carrito.forEach((item) => {
+            quantity = quantity + item.cantidad
+        })
+        return quantity
+        console.log(quantity)
+    }
 
     const valorDelContexto = {
         carrito: carrito,
@@ -41,7 +58,7 @@ export const MiProvider = ({ children }) => {
     }
 
     return (
-        <Provider value={valorDelContexto}>
+        <Provider value={{carrito, agregarProducto, isInCart, eliminarProducto, actualizarCantidad, vaciarCarrito, cartLenght}}>
             {children}
         </Provider>
     )
