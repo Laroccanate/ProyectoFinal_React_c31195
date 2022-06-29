@@ -11,6 +11,9 @@ import { BrowserRouter } from "react-router-dom";
 import { Routes, Route}  from 'react-router-dom';
 import {MiProvider} from './components/CartContext';
 
+
+
+
 const App = () => {
     return (        
         <BrowserRouter>

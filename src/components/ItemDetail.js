@@ -35,7 +35,7 @@ const ItemDetail = ({item}) => {
         <h4>{item.category}</h4>
         <h4>${item.price}.-</h4>
       </div>       
-      {confirm ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>: <div><Link to={`/cart`}>Terminar Compra</Link></div>}       
+      {confirm ? <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>: <div><div><Link to={`/cart`}>Finalizar Compra</Link></div> <div><Link to='/'>Continuar comprando</Link></div></div> }        
       </div>
       
     )

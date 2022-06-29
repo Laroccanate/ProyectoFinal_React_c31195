@@ -34,8 +34,8 @@ const isInCart = (id) => {
 
 
 // Remover un item del carrito
-    const eliminarProducto = (producto) => {
-        setCarrito (carrito.filter((item) => (item.producto !== producto)))
+    const eliminarProducto = (id) => {
+        setCarrito (carrito.filter((item) => (item.id !== id)))
     }
 
     const actualizarCantidad = (producto, cantidad) => {
@@ -59,15 +59,31 @@ const isInCart = (id) => {
         console.log(quantity)
     }
 
-    const valorDelContexto = {
+// Obtener el subtotal
+const getSubtotal = (price, cantidad) => {
+    let subtotal = 0
+    subtotal = subtotal + (price * cantidad)
+    return Number(subtotal)
+}
+
+// Obtener el total
+    const getTotal = () => {
+    let total = 0
+    carrito.forEach((item) => {
+        total = total + (item.cantidad * item.price)
+    })
+    return Number(total)
+}
+
+    /*const valorDelContexto = {
         carrito: carrito,
         cantidad_total: cantidad_total,
         precio_total: precio_total,
         agregarProducto: agregarProducto,
-    }
+    }*/
 
     return (
-        <Provider value={{carrito, agregarProducto, isInCart, eliminarProducto, actualizarCantidad, vaciarCarrito, cartLenght}}>
+        <Provider value={{carrito, agregarProducto, isInCart, eliminarProducto, actualizarCantidad, vaciarCarrito, cartLenght, getSubtotal, getTotal }}>
             {children}
         </Provider>
     )

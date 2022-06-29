@@ -8,7 +8,8 @@ const CartWidget = () => {
         //resultado.agregarProducto()
         return (
                 <>                        
-                        <NavLink to="/cart"><span className="material-symbols-outlined">shopping_cart</span> {cartLenght()}</NavLink>
+                        <NavLink to="/cart"><span className="material-symbols-outlined">shopping_cart</span>{cartLenght() > 0 && (<span >{cartLenght()}</span>)}</NavLink>
+                        
                 </>
 
         )

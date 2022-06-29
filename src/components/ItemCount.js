@@ -23,7 +23,7 @@ function ItemCount({stock, onAdd}) {
         <button onClick= {subs}> - </button>
         <span>{count}</span>
         <button onClick={adding}> + </button>        
-        <button onClick={confirmarContador}>Agregar</button>
+        <button onClick={confirmarContador}>Agregar a mi compra</button>
     </div>
   )
 }
