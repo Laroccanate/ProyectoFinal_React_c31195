@@ -1,4 +1,4 @@
-import productos from "./productos"
+/*import productos from "./productos"
 
 export const customFetch =()=>{
     return new Promise((resolve) =>{
@@ -15,7 +15,7 @@ export const getProductosById = (id)=>{
         },500)
     })
 }
-
+/* 
 export const getProductosByCategory = (category)=>{
     return new Promise((resolve) =>{
         setTimeout(()=>{
@@ -23,4 +23,4 @@ export const getProductosByCategory = (category)=>{
         },500)
     })
 }
-
+*/

@@ -10,7 +10,7 @@ function Item({id, title, description, price, image, stock}) {
         <Link to={`/item/${id}`}>Detalle del producto</Link>
         
     </div>
-  )
+  ) 
 }
 
 export default Item

@@ -20,7 +20,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border: 2px solid gray;
+    border: 2px solid gray; 
     
 }
 

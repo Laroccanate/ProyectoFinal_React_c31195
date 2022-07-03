@@ -11,8 +11,8 @@ const CartWidget = () => {
                         <NavLink to="/cart"><span className="material-symbols-outlined">shopping_cart</span>{cartLenght() > 0 && (<span >{cartLenght()}</span>)}</NavLink>
                         
                 </>
-
-        )
+        
+        ) 
 }
 
 export default CartWidget

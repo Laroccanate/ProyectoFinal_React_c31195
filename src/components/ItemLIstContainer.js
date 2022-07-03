@@ -5,8 +5,8 @@ import { customFetch, getProductosByCategory } from '../utils/customFetch'
 import ItemList from './ItemList'
 import { useParams } from "react-router-dom"
 import { ProductLoader } from './ProductLoader'
-import { db } from '../config/firebase';
-import { getDocs, collection } from 'firebase/firestore';
+import { db, collectionProductos } from '../config/firebase';
+import { getDocs, collection, query, where } from 'firebase/firestore';
 //getDocs: DOCUMENTOS
 //getDoc: ID
 //doc: documento de coleccion
@@ -19,11 +19,17 @@ function ItemListContainer() {
 
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(true)
-    const { id } = useParams()
+    const { categoryId } = useParams()
 
     useEffect(() => {
-        const collectionProductos = collection(db, "productos")
-        const consulta = getDocs (collectionProductos)
+        
+        const collectionProductos = collection(db, "productos") 
+        const myItems = categoryId
+        ? query (collection(db, "productos"), where ("category", "==", categoryId) )
+        : collection(db, "productos")
+        
+        
+        const consulta = getDocs (myItems)
 
         consulta
             .then((resultado)=>{
@@ -34,7 +40,7 @@ function ItemListContainer() {
 
                     // sumarle el id a la info del objeto
                     const aux = referencia.data()
-                    aux.id = referencia.id
+                    aux.id = referencia.id 
                     return aux
                 }
                     )
@@ -43,26 +49,9 @@ function ItemListContainer() {
             })
             .catch((error) => {
                 console.log(error)
-            })
-        
-    /*
-        useEffect(() => {    
-            setLoading(true)    
-            if(!id) {
-            customFetch()
-            .then(response => {
-                setItems(response)
-                setLoading(false)
-                })
-            } else {
-                getProductosByCategory(id)
-                .then(response => {
-                setItems(response)
-                setLoading(false)
-                })
-            }
-    */
-    }, [id])
+            })        
+    
+    }, [categoryId])
 
 return (
     <div>

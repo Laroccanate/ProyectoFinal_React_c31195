@@ -14,7 +14,7 @@ const ItemDetail = ({item}) => {
   const [confirm, setConfirm] = useState(true)
 
   const onAdd = (cantidadSeleccionada) =>{    
-    if (cantidadSeleccionada >= 1){
+    if (cantidadSeleccionada >= 1){ 
       console.log(cantidadSeleccionada);
       agregarProducto (item, cantidadSeleccionada)
       setConfirm(false);

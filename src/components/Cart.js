@@ -9,17 +9,6 @@ function Cart() {
 
 const {carrito, getSubtotal, eliminarProducto, cartLenght, getTotal, vaciarCarrito} = useContext(contexto)
 
-/*const handleSubmit=(e)=>{
-  e.preventDefault(0)
-  const nombre = e.target.elements.nombre.value
-  const email = e.target.elements.email.value
-  const telefono = e.target.elements.telefono.value
-
-  const usuario = {nombre, email, telefono}
-  console.log(usuario)
-}
-*/
-
 
   return (
     <>
@@ -46,16 +35,17 @@ const {carrito, getSubtotal, eliminarProducto, cartLenght, getTotal, vaciarCarri
         </div> 
       )     
       )}
-      <div>
+            <div>
               <p>Cantidad de items en total:{cartLenght()}</p>  
             </div> 
             <div>
               <p>Importe Total: ${parseFloat(getTotal())}</p>
-              </div>
-              <div>
+            </div>
+            <div>
             <button onClick={vaciarCarrito}>x Eliminar Todo </button>
             </div>
-        <Link to="/checkout">Finalizar la Compra</Link>       
+            <Link to="/checkout">Finalizar la Compra</Link>   
+              
     </div>
     )}
     </>

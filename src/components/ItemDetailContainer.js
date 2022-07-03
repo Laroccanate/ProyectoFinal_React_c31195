@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react'
 import ItemDetail from './ItemDetail';
 import {getProductosById} from '../utils/customFetch'
 import { useParams } from 'react-router-dom';
-import { db } from '../config/firebase';
-import { getDocs, collection } from 'firebase/firestore';
+import { db, collectionProductos} from '../config/firebase';
+import { doc, getDoc, collection } from 'firebase/firestore';
 
 
 const ItemDetailContainer = () => {
@@ -11,15 +11,20 @@ const ItemDetailContainer = () => {
     const {id} = useParams()
 
     useEffect(()=>{
-      getProductosById(parseInt(id))
-        .then(response => {setProduct(response)})
-        .catch((error) => console.log(error))
-    }, [])
+      const myItems = doc(collectionProductos, id)
+      getDoc(myItems).then((response)=>{
+        setProduct({
+          id: response.id, 
+          ...response.data(),
+        });
+      });
+    },
+    [id]);
+    return(
+      <ItemDetail item={item}/>)
+  }
 
-    //console.log(item)
-  return (
-    <ItemDetail item={item}/>)
-}
+
 
 
 

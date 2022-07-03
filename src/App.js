@@ -10,12 +10,15 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route}  from 'react-router-dom';
 import {MiProvider} from './components/CartContext';
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+import productos from "./utils/productos"
+import { db, collectionProductos } from './config/firebase';
 
 
-
+/*productos.map((prod)=>addDoc(collectionProductos, prod));*/
 
 const App = () => {
-    return (        
+    return (         
         <BrowserRouter>
         <MiProvider> 
         <Header/> 
@@ -23,7 +26,7 @@ const App = () => {
         <Main/>
         <Routes>
             <Route path={"/"} element={<ItemListContainer/>}/>
-            <Route path={"/category/:id"} element={<ItemListContainer/>}/>
+            <Route path={"/category/:categoryId"} element={<ItemListContainer/>}/>
             <Route path={"/item/:id"} element={<ItemDetailContainer/>}/>
             <Route path={"/cart"} element={<Cart/>}/>
             <Route path={"/checkout"} element={<Checkout/>}/>

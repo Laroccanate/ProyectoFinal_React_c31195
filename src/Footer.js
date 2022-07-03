@@ -10,10 +10,10 @@ const Footer = () => {
                 <a className="navbar-brand" href="https://es-la.facebook.com/">Facebook</a>
                 <a className="navbar-brand" href="https://twitter.com/">Twitter</a>
                 <a className="navbar-brand" href="https://www.pinterest.es/">Pinterest</a>
-            </nav>          
+            </nav>           
         </footer>
         <p className="d-flex justify-content-center">Copyright &Copy</p>
         </>
     ) 
-}
+} 
 export default Footer

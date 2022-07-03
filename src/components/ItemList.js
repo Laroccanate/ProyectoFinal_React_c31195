@@ -18,7 +18,7 @@ function ItemList({products}) {
         )
       }
     </div>
-  )
+  ) 
 }
 
 export default ItemList

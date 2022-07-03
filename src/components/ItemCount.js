@@ -10,7 +10,7 @@ function ItemCount({stock, onAdd}) {
         }
     }
     function subs(){
-        if (count > 0)
+        if (count > 0) 
         setCount (count-1)
     }
     const confirmarContador = (e) => {

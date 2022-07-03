@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+import productos from "../utils/productos";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -16,9 +17,18 @@ const firebaseConfig = {
   messagingSenderId: "1082097671630",
   appId: "1:1082097671630:web:938b3e6caaea183663df9f",
   measurementId: "G-G7YDZZ91S9"
-};
+}; 
+
+ export const addOrder = async (order) => {
+  const docSnap = await addDoc(collection(db, "orders"), order)
+  return docSnap.id
+}
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-export const db = getFirestore(app)
+export const db = getFirestore(app);
+export const collectionProductos = collection (db, "productos")
+
+

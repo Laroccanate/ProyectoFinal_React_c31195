@@ -18,7 +18,7 @@ return (
     <SkeletonCard />
     <SkeletonCard />
     <SkeletonCard />
-    <SkeletonCard />
+    <SkeletonCard /> 
     <SkeletonCard />
     </section>
 )
