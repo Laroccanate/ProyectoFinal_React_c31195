@@ -59,13 +59,16 @@ if(idCompra !== ''){
 
   return (
     <>
-    <Link to='/'>seguir comprando</Link><div>
+    <div>
+    <Link to='/'><button>seguir comprando</button></Link>
+    </div>
+            <div>
               <p>Cantidad de items en total:{cartLenght()}</p>  
             </div> 
             <div>
               <p>Importe Total: ${parseFloat(getTotal())}</p>
             </div>
-            <Link to="/"> <button onClick={vaciarCarrito}>Volver al inicio</button></Link>
+            <Link to="/"> <button onClick={vaciarCarrito}>Vaciar carro y Volver al inicio</button></Link>
             <h2>Complete con sus datos para finalizar la compra</h2>            
             <form className="space-y-6">
             <div><input id="name" type="text" name="name"  required onChange={handleSubmitChange} placeholder="Nombre" /></div>
