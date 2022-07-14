@@ -3,8 +3,6 @@ import { initializeApp } from "firebase/app";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 
-// TODO: Add SDKs for Firebase products that you want to use
-
 const firebaseConfig = {
   apiKey: "AIzaSyDcfK0q7r9iObQG7hAljU_wOBiD45OlpCM",
   authDomain: "laroccanate-e5800.firebaseapp.com",

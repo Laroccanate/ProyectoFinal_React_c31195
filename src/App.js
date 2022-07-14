@@ -13,8 +13,6 @@ import {MiProvider} from './components/CartContext';
 
 
 
-/*productos.map((prod)=>addDoc(collectionProductos, prod));*/
-
 console.log(process.env)
 
 const App = () => {

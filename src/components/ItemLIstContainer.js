@@ -15,7 +15,7 @@ function ItemListContainer() {
     const { categoryId } = useParams()
 
     useEffect(() => {        
-        const collectionProductos = collection(db, "productos") 
+        
         const myItems = categoryId
         ? query (collection(db, "productos"), where ("category", "==", categoryId) )
         : collection(db, "productos")        
@@ -32,10 +32,7 @@ function ItemListContainer() {
                     )
                     setItems(productos_mapeados)
                     setLoading(false)
-            })
-            /*.catch((error) => {
-                console.log(error)
-            })   */     
+            })               
     
     }, [categoryId])
 

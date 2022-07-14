@@ -15,7 +15,7 @@
 
 ## Fundamentación
 
-El proyecto surge como propuesta de un e-commerce, en base a lo aprendido a lo largo del curso en conjunto a todos las tareas realizadas en cada clase.
+El proyecto es un e-commerce, en base a lo aprendido a lo largo del curso. El conjunto de todos las tareas realizadas en cada clase.
 
 ## Herramientas
 
@@ -57,4 +57,8 @@ Al realizar cualquier modificación en el código, se hará un reload mostrando 
 
 Acceder a [Create React App Documentation](https://create-react-app.dev/docs/getting-started/)
 
-[React documentation.](https://reactjs.org/)
+[React documentation.](https://reactjs.org/
+
+
+## Nota:
+Dejo el "console.log(process.env)"en la app por el archivo .env aprendido en la ultima clase.

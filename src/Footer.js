@@ -12,7 +12,7 @@ const Footer = () => {
                 <a className="navbar-brand" href="https://www.pinterest.es/">Pinterest</a>
             </nav>           
         </footer>
-        <p className="d-flex justify-content-center">Copyright &Copy</p>
+        <p className="d-flex justify-content-center">Copyright & Copy</p>
         </>
     ) 
 } 
