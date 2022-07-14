@@ -10,12 +10,12 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route}  from 'react-router-dom';
 import {MiProvider} from './components/CartContext';
-import { addDoc, collection, getFirestore } from "firebase/firestore";
-import productos from "./utils/productos"
-import { db, collectionProductos } from './config/firebase';
+
 
 
 /*productos.map((prod)=>addDoc(collectionProductos, prod));*/
+
+console.log(process.env)
 
 const App = () => {
     return (         

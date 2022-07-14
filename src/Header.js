@@ -1,13 +1,11 @@
-import NavBar from "./components/NavBar"
-import {Link,NavLink} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 
-const Header = () => {
-    console.log()
+const Header = () => {    
     return(
         <header>
             <Link to="/">
-                <h1 className="d-flex justify-content-center"> Este es un titulo de demostracion  </h1> 
+                <h1 className="d-flex justify-content-center"> Tienda Fiu Fiu  </h1> 
             </Link>       
             
         </header>

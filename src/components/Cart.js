@@ -2,7 +2,6 @@ import React from 'react'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { contexto } from "./CartContext"
-import Checkout from './Checkout'
 
 
 function Cart() {
@@ -12,50 +11,98 @@ const {carrito, getSubtotal, eliminarProducto, cartLenght, getTotal, vaciarCarri
 
   return (
     <>
-{cartLenght() == 0 ? (
-        <div>
-          <div>
-            <p>Oops! Tu carrito está vacío. Por favor, agregá algún producto para poder continuar.</p>
-            <Link to='/'>volver al inicio</Link>
+{cartLenght() === 0 ? (        
+          <div className='page page__in page__center'>
+            <p className='titulo22'>Oops! Tu carrito está vacío. </p>
+            <p className='titulo22'>Por favor, agregá algún producto para poder continuar.</p>
+            <Link to='/'><button className='btnconf'>volver al inicio</button></Link>
           </div>
+        
+        ) : (    
+    
+<div className="page">
+    <div className="page__in">
+        <div className="cart">
+            <h2 className="titulo32">Mi Carrito</h2>
         </div>
-        ) : (
+        <div className="cart__table">
+            <div className="cart__table__row">
+                <div className="cart__table__row__col">
+                    <p className="txt16d">Producto</p>
+                </div>
+                <div className="cart__table__row__col">
+                    <p className="txt16d"></p>
+                </div>
+                <div className="cart__table__row__col">
+                    <p className="txt16d">Precio</p>
+                </div>
+                <div className="cart__table__row__col">
+                    <p className="txt16d">Cantidad</p>
+                </div>
+                <div className="cart__table__row__col">
+                    <p className="txt16d">Subtotal</p>
+                </div>
+                <div className="cart__table__row__col">
+                    <p className="txt16d"></p>
+                </div>
+            </div>
+            </div>
+            <div>
+            {carrito.map((product) => (
+                    <div key={product.id} className="cart__table__row">
+                        <div className="cart__table__row__col">
+                            <img className="cart__img" src={product.image} alt={product.title} />
+                        </div>
+                        <div className="cart__table__row__col">
+                            <p className="txt16d">{product.title}</p>
+                        </div>
+                        <div className="cart__table__row__col">
+                            <p className="txt16d">${product.price}</p>
+                        </div>
+                        <div className="cart__table__row__col">
+                            <p className="txt16d">{product.cantidad}</p>
+                        </div>
+                        <div className="cart__table__row__col">
+                            <p className="txt16d">
+                            ${parseFloat(getSubtotal(product.price, product.cantidad))}
+                            </p>
+                        </div>
+                        <div className="cart__table__row__col">
+                          <span onClick={() => eliminarProducto(product.id)} className="cart__icon material-symbols-outlined">delete</span>                        
+                        </div>
+                    </div>
+                ))}
+            </div>
 
-    <div>
-      {carrito.map((product) =>(
-      <div key={product.id}>
-        <img src={product.image} alt={product.title} width="400"/>
-        <h1>{product.title}</h1>
-        <h2>Id:{product.id}</h2>
-        <h3>Stock:{product.stock}</h3> 
-        <h4>${product.price}.-</h4>
-        <p>Cantidad total: {product.cantidad}</p>
-        <div><p>Importe Subtotal: ${parseFloat(getSubtotal(product.price, product.cantidad))}</p></div>
-        <div> <button onClick={() => eliminarProducto(product.id)}>Eliminar Item</button></div>
-        </div> 
-      )     
-      )}
-            <div>
-              <p>Cantidad de items en total:{cartLenght()}</p>  
-            </div> 
-            <div>
-              <p>Importe Total: ${parseFloat(getTotal())}</p>
-            </div>
-            <div>
-            <button onClick={vaciarCarrito}>x Eliminar Todo </button>
-            </div>
-            <Link to="/checkout">Finalizar la Compra</Link>   
+
+            <div className="cart__clear">
+              <button className="btnconf" onClick={vaciarCarrito}>
+                Vaciar Carrito
+              </button>
               
+            </div>
+            <div>
+              <div className="page__flex page__flex__end">
+                <p className="cart__items">Items total:</p>
+                <p className="cart__items">{cartLenght()}</p>
+              </div>
+              <div className="page__flex page__flex__end">
+                <p className="cart__total">TOTAL:</p>
+                <p className="cart__total">$ {parseFloat(getTotal())}</p>
+              </div>
+            </div>
+            <div className="page__flex page__flex__end">
+              <Link to="/" className="btnconf">Seguir comprando</Link>
+            </div>            
+            <div className="page__flex page__flex__end">
+              <Link to="/checkout" className="btnconf">FINALIZAR COMPRA</Link>
+            </div>
+            
+        
     </div>
+</div>
     )}
     </>
   )
 }
-/*<form onSubmit={handleSubmit}>        
-        <div><input type="text" id="nombre" placeholder='Nombre'/></div>
-        <div><input type="email" id="email" placeholder='Email'/></div>
-        <div><input type="number" id="telefono" placeholder='Telefono'/></div>
-      <button>Comprar</button>
-      </form>
-      */
 export default Cart

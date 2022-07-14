@@ -1,70 +1,60 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Datos
 
-## Available Scripts
+* **Curso:** React Js/ Coderhouse
 
-In the project directory, you can run:
+* **Comisión:** 31195
 
-### `npm start`
+* **Profesor:** Horacio Alfredo Gutierrez Estevez
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **Tutor:** Diego Alvarado
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **Desarrollado por el estudiante:** Natanael Larocca
 
-### `npm test`
+* **Proyecto final:** 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Fundamentación
 
-### `npm run build`
+El proyecto surge como propuesta de un e-commerce, en base a lo aprendido a lo largo del curso en conjunto a todos las tareas realizadas en cada clase.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Herramientas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tecnologías
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* **HTML5**
+* **CSS3**
+* **JavaScript**
 
-### `npm run eject`
+### Librerías, frameworks, base de datos, etc.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* **Node.js**
+* **React**
+* **TailwindCSS**
+* **Firestore**
+* **skeleton**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Gestor de paquetes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* **npm**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Control de versiones
 
-## Learn More
+* **git**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contacto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* **LinkedIn:** https://www.linkedin.com/in/laroccanate/
+* **GitHub:** https://github.com/laroccanate
 
-### Code Splitting
+## En el directorio del proyecto se debe ingresar en la consola:
+**npm start**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+De esta forma se inicia en forma local y se puede acceder en http://localhost:3000/ para verlo en el navegador.
 
-### Analyzing the Bundle Size
+Al realizar cualquier modificación en el código, se hará un reload mostrando los cambios.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Documentación de React
 
-### Making a Progressive Web App
+Acceder a [Create React App Documentation](https://create-react-app.dev/docs/getting-started/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[React documentation.](https://reactjs.org/)

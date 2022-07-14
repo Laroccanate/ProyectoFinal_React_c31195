@@ -3,12 +3,11 @@ import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { contexto } from "./CartContext"
 import { addOrder } from "../config/firebase" 
-import { db, collectionProductos} from '../config/firebase';
-import { addDoc, collection, serverTimestamp, doc, getDoc } from 'firebase/firestore';
+
 
 function Checkout() {
   
-  const { carrito, agregarProducto, isInCart, eliminarProducto, actualizarCantidad, vaciarCarrito, cartLenght, getTotal,  } = useContext(contexto)
+  const { carrito, vaciarCarrito, cartLenght, getTotal} = useContext(contexto)
 
   const [idCompra, setIdCompra] = useState("")
   const [showModal, setShowModal] = useState(false)
@@ -24,18 +23,9 @@ function Checkout() {
 
   const handleSubmitChange = (e) => {
     setBuyer({ ...buyer, [e.target.name]: e.target.value })
-
-    console.log(buyer)
   } 
+    function orderHandler() {
   
-  function orderHandler() {
-    /*const formatedCart = carrito.map((prod) => {
-      return {
-          cantidad: prod.cantidad,
-          item: prod.title,
-          id: prod.id,
-      };
-  })*/
     const order = {
         buyer,
         item: carrito,
@@ -44,9 +34,7 @@ function Checkout() {
     }
     addOrder(order).then(data => {
         setIdCompra(data)
-        vaciarCarrito()
-        console.log(order)
-        console.log(carrito)
+        vaciarCarrito()        
     }) 
 }
 if(idCompra !== ''){
@@ -59,8 +47,12 @@ if(idCompra !== ''){
 
   return (
     <>
+
+
+
+    {/*
     <div>
-    <Link to='/'><button>seguir comprando</button></Link>
+    <Link to='/'><button className='btnconf'>seguir comprando</button></Link>
     </div>
             <div>
               <p>Cantidad de items en total:{cartLenght()}</p>  
@@ -68,7 +60,10 @@ if(idCompra !== ''){
             <div>
               <p>Importe Total: ${parseFloat(getTotal())}</p>
             </div>
-            <Link to="/"> <button onClick={vaciarCarrito}>Vaciar carro y Volver al inicio</button></Link>
+            <Link to="/"> <button className='btnconf' onClick={vaciarCarrito}>Vaciar carro y Volver al inicio</button></Link>
+*/}
+
+            <div className='page page__in page__center'>
             <h2>Complete con sus datos para finalizar la compra</h2>            
             <form className="space-y-6">
             <div><input id="name" type="text" name="name"  required onChange={handleSubmitChange} placeholder="Nombre" /></div>
@@ -78,12 +73,13 @@ if(idCompra !== ''){
             <div><input id="emailConfirm" type="email" name="emailConfirm"  required onChange={handleSubmitChange} placeholder="Confirmar e-mail" /></div>   
             </form>
             {buyer.name && buyer.surname && buyer.telephone && (buyer.email === buyer.emailConfirm)? (
-              // Botón habilitado
             <input onClick={() => { orderHandler(); setShowModal(true) }}  type="submit" value="Proceder al pago"/>
             ) : (
-            // Botón deshabilitado
-            <input type="submit" value="Proceder al pago" disabled />)}
-        
+              
+            <input className='btnconf'  type="submit" value="Proceder al pago" disabled />)
+            
+            }
+        </div>
     </>
   );
 }

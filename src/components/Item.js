@@ -6,7 +6,7 @@ function Item({id, title, description, price, image, stock}) {
     <div className="item">
         <h2>{title}</h2>   
         <img src={image} alt={id}/>
-        <h6>${price}.-</h6>
+        <h6 className='item--precio'>${price}.-</h6>
         <Link to={`/item/${id}`}>Detalle del producto</Link>
         
     </div>

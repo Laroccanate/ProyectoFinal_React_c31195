@@ -19,11 +19,11 @@ function ItemCount({stock, onAdd}) {
     }
 
   return (
-    <div>
-        <button onClick= {subs}> - </button>
+    <div className='itemcount cardContador'>
+        <button className='itemcount--btn' onClick= {subs}> - </button>
         <span>{count}</span>
-        <button onClick={adding}> + </button>        
-        <button onClick={confirmarContador}>Agregar a mi compra</button>
+        <button className='itemcount--btn' onClick={adding}> + </button>        
+        <button className='btnconf' onClick={confirmarContador}>Agregar a mi compra</button>
     </div>
   )
 }

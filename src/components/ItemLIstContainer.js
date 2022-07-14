@@ -1,18 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
-import { customFetch, getProductosByCategory } from '../utils/customFetch'
 import ItemList from './ItemList'
 import { useParams } from "react-router-dom"
 import { ProductLoader } from './ProductLoader'
-import { db, collectionProductos } from '../config/firebase';
+import { db} from '../config/firebase';
 import { getDocs, collection, query, where } from 'firebase/firestore';
-//getDocs: DOCUMENTOS
-//getDoc: ID
-//doc: documento de coleccion
-//query: filtro
-//where:filtro
-//collection:
 
 
 function ItemListContainer() {
@@ -21,24 +14,17 @@ function ItemListContainer() {
     const [loading, setLoading] = useState(true)
     const { categoryId } = useParams()
 
-    useEffect(() => {
-        
+    useEffect(() => {        
         const collectionProductos = collection(db, "productos") 
         const myItems = categoryId
         ? query (collection(db, "productos"), where ("category", "==", categoryId) )
-        : collection(db, "productos")
-        
+        : collection(db, "productos")        
         
         const consulta = getDocs (myItems)
-
         consulta
-            .then((resultado)=>{
-                console.log(resultado.docs)
+            .then((resultado)=>{                
                 const productos_mapeados = resultado.docs.map(referencia=>{
-                    //console.log(referencia.id)
-                    //console.log(referencia.data())//json//
-
-                    // sumarle el id a la info del objeto
+                    
                     const aux = referencia.data()
                     aux.id = referencia.id 
                     return aux
@@ -47,9 +33,9 @@ function ItemListContainer() {
                     setItems(productos_mapeados)
                     setLoading(false)
             })
-            .catch((error) => {
+            /*.catch((error) => {
                 console.log(error)
-            })        
+            })   */     
     
     }, [categoryId])
 

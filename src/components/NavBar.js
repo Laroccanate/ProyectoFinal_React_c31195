@@ -5,9 +5,9 @@ import {NavLink} from "react-router-dom"
 const NavBar = () => {
     return( 
             <nav className="navbar navbar-light bg-light">                           
-                <NavLink to="/category/jewelery">{"jewelery"}</NavLink>
-                <NavLink to="/category/electronics">{"electronics"}</NavLink>
-                <NavLink to="/category/clothing">{"clothing"}</NavLink>                
+                <NavLink to="/category/jewelery">{"Jewelery"}</NavLink>
+                <NavLink to="/category/electronics">{"Electronics"}</NavLink>
+                <NavLink to="/category/clothing">{"Clothing"}</NavLink>                
                 <CartWidget/>
             </nav>           
     ) 
