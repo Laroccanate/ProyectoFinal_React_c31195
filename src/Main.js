@@ -3,7 +3,7 @@
 const Main = () => {
     return(
         <main >
-            <h2 className="d-flex justify-content-center"><span class="material-symbols-outlined">
+            <h2 className="d-flex justify-content-center"><span className="material-symbols-outlined">
 bolt
 </span></h2>        
         
